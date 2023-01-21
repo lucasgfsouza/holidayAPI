@@ -20,11 +20,14 @@ module.exports = (year) => {
     day = (d + e + 22);
   }
 
-  const pascoaDate = new Date(year, month, day);
+  const pascoaDate = new Date(year, month, day)
 
   const carnavalDate = dateFns.subDays(pascoaDate, 47);
 
   const corpusChristDate = dateFns.addDays(pascoaDate, 60);
 
-  return { pascoaDate, carnavalDate, corpusChristDate };
+  return { 
+    pascoaDate: dateFns.format(pascoaDate, 'PPP'),
+    carnavalDate: dateFns.format(carnavalDate, 'PPP'),
+    corpusChristDate: dateFns.format(corpusChristDate, 'PPP') };
 };

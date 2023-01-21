@@ -11,14 +11,9 @@ const dateConvertion = new DateConvertion();
 const app = express()
 const port = 3000
 
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
 app.get('/mobileHolidays', (req, res) => {
     if (!req.query.year) {
-        throw new Error('precisa dum ano aí cabaço')
+        res.status(400).send('You need to inform an year')
     }
     const { year } = req.query
     res.send(mobileHolidays(year))
