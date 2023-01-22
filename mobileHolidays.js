@@ -27,7 +27,8 @@ module.exports = (year) => {
   const corpusChristDate = dateFns.addDays(pascoaDate, 60);
 
   return { 
-    pascoaDate: dateFns.format(pascoaDate, 'PPP'),
-    carnavalDate: dateFns.format(carnavalDate, 'PPP'),
-    corpusChristDate: dateFns.format(corpusChristDate, 'PPP') };
+    pascoaDate,
+    carnavalDate,
+    corpusChristDate,
+  };
 };
